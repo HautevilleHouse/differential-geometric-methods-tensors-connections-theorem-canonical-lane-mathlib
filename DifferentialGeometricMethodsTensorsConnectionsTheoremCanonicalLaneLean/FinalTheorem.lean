@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DifferentialGeometricMethodsTensorsConnectionsTheoremCanonicalLaneLean.BundleGeometry
+import HautevilleHouse.DifferentialGeometricMethodsTensorsConnectionsTheoremCanonicalLaneLean.ConnectionForm
+import HautevilleHouse.DifferentialGeometricMethodsTensorsConnectionsTheoremCanonicalLaneLean.TensorAlgebra
+import HautevilleHouse.DifferentialGeometricMethodsTensorsConnectionsTheoremCanonicalLaneLean.CurvatureInvariants
+import HautevilleHouse.DifferentialGeometricMethodsTensorsConnectionsTheoremCanonicalLaneLean.Holonomy
+
+namespace HautevilleHouse
+namespace DifferentialGeometricMethodsTensorsConnectionsTheoremCanonicalLaneLean
+
+def ConstrainedDifferentialGeometryClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_differential_geometry_endgame (A : AdmissibleClass) :
+    ConstrainedDifferentialGeometryClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DifferentialGeometricMethodsTensorsConnectionsTheoremCanonicalLaneLean
+end HautevilleHouse
